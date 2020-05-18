@@ -38,7 +38,7 @@ def plot_img_and_hist(img, axes, bins=65536):
     # Display image
     ax_img.imshow(img, cmap=plt.cm.gray)
     ax_img.set_axis_off()
-    ax_img.set_adjustable('box-forced')
+    ax_img.set_aspect('equal')
 
     # Display histogram
     ax_hist.hist(img.ravel(), bins=bins, histtype='step', color='black')
@@ -93,7 +93,7 @@ def equalize_image(infile):
                                               nbins=2**16)
 
     # Display results
-    fig = plt.figure(figsize=(10, 8))
+    fig = plt.figure(figsize=(8, 4))
     axes = np.zeros((2, 4), dtype=np.object)
     axes[0, 0] = fig.add_subplot(2, 4, 1)
     for i in range(1, 4):
@@ -149,11 +149,11 @@ def equalize_image(infile):
 # To run a single file
 # infile = './path_to_file/Filename.tif'
 # img_eq_color, img_adapteq_color, img_rescale_color = equalize_image(infile)
+# img_eq_color, img_adapteq_color, img_rescale_color = equalize_image('ceph_1.tif')
 
 import os
 from skimage import io
 import time
-import gc
 
 # Set the directory you want to start from
 rootDir = './path_to_directory'
