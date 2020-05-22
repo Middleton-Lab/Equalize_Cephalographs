@@ -31,6 +31,18 @@ def plot_img_and_hist(img, axes, bins=65536):
     import matplotlib
     import matplotlib.pyplot as plt
 
+    from matplotlib import rc
+    font = {'size'   : 9}
+    matplotlib.rc('font', **font)
+    #rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
+    ## for Palatino and other serif fonts use:
+    #rc('font',**{'family':'serif','serif':['Palatino']})
+    #rc('text', usetex=True)
+
+    # change font
+    matplotlib.rcParams['font.sans-serif'] = "Arial"
+    matplotlib.rcParams['font.family'] = "sans-serif"
+
     img = img_as_float(img)
     ax_img, ax_hist = axes
     ax_cdf = ax_hist.twinx()
@@ -127,6 +139,7 @@ def equalize_image(infile):
         warnings.simplefilter("ignore")
         fig.tight_layout()
     plt.savefig(infile[:-4] + '_diag.pdf')
+    plt.savefig(infile[:-4] + '_diag.tif', dpi=300)
     plt.close(fig)
 
     # Convert to 8 bit and add color channels
