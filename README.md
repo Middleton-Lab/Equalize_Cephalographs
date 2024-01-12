@@ -4,8 +4,8 @@ Python functions to equalize the grayscale values of cephalographs
 
 ## Instructions
 
-- Download & install Anaconda Python (https://continuum.io/). Select Python 3.5 or greater (not 2.7). It's a big install, so it takes a while.
-- (Optional) Install Sublime Text for editing .py` files (https://www.sublimetext.com/). Or your preferred text editor.
+- Download & install Anaconda Python (https://www.anaconda.com/download). It's a big install, so it takes a while.
+- (Optional) Install Sublime Text for editing .py` files (https://www.sublimetext.com/). Or use your preferred text editor.
 - Open Anaconda shell
 - Install packages (only do this once):
     - `conda install scikit-image`
